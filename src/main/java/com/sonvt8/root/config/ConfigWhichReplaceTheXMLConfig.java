@@ -20,7 +20,7 @@ import java.beans.PropertyVetoException;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = "com.sonvt8.springmvc")
+@ComponentScan(basePackages = "com.sonvt8.root")
 @EnableWebMvc
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
@@ -55,7 +55,7 @@ public class ConfigWhichReplaceTheXMLConfig implements WebMvcConfigurer{
     public LocalSessionFactoryBean sessionFactory() throws PropertyVetoException {
         LocalSessionFactoryBean  sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] {"com.sonvt8.springmvc.entity"});
+        sessionFactory.setPackagesToScan(new String[] {"com.sonvt8.root.entity"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
