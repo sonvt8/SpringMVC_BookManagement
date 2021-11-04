@@ -79,5 +79,11 @@ public class ConfigWhichReplaceTheXMLConfig implements WebMvcConfigurer{
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/css/**").addResourceLocations("/resources/css/");
+        registry.addResourceHandler("/resources/js/**").addResourceLocations("/resources/js/");
+        registry.addResourceHandler("/resources/demo_data/**").addResourceLocations("/resources/demo_data/");
+        registry.addResourceHandler("/resources/images/**").addResourceLocations("/resources/images/");
+        registry.addResourceHandler("/resources/less/**").addResourceLocations("/resources/less/");
+        registry.addResourceHandler("/resources/locales/**").addResourceLocations("/resources/locales/");
+        registry.addResourceHandler("/resources/swf/**").addResourceLocations("/resources/swf/");
     }
 }
