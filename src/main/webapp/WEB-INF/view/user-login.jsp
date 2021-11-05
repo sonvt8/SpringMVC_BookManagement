@@ -13,7 +13,7 @@
 		<jsp:include page="lib.jsp" />
 	</head>
 	<body class="login-container login-cover">
-			<!-- Page container -->
+		<!-- Page container -->
 		<div class="page-container">
 		
 			<!-- Page content -->
@@ -71,6 +71,7 @@
 		<%--If login fail, Spring security will return an error param --%>
 		<c:if test="${param.error != null}">
 			<script type="text/javascript">
+				console.log(${param.error})
 				$(function() {
 					new PNotify({
 						title : 'Login Fail!',
