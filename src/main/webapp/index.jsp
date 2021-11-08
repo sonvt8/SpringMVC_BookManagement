@@ -1,1 +1,2 @@
-<% response.sendRedirect("books/list"); %>
+<%-- <% response.sendRedirect("books/list"); %> --%>
+Hello
