@@ -33,9 +33,19 @@ public class Book {
     
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "CategoryId")
-    private Book book;
+    private Category category;
 
-    public Book() { }
+	public Book() { }
+    
+    public Book(String title, String author, String price, String released, int quantity, String imageUrl, String description) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.released = released;
+        this.quantity = quantity;
+        this.imageUrl = imageUrl;
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -99,5 +109,13 @@ public class Book {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+    public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }

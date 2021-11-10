@@ -21,7 +21,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     @Transactional
-    public List<Book> getCustomers(int theSortField) {
+    public List<Book> getBooks(int theSortField) {
         return bookDAO.getBooks(theSortField);
     }
 

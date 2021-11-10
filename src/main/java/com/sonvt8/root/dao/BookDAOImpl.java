@@ -38,7 +38,7 @@ public class BookDAOImpl implements BookDAO {
                 break;
         }
 
-        Query<Book> theQuery = currentSession.createQuery("from Books order by " + sortField, Book.class);
+        Query<Book> theQuery = currentSession.createQuery("from Book order by " + sortField, Book.class);
 
         List<Book> books = theQuery.getResultList();
 
@@ -68,7 +68,7 @@ public class BookDAOImpl implements BookDAO {
     public void deleteBook(int theId) {
         Session currentSession = sessionFactory.getCurrentSession();
 
-        Query theQuery = currentSession.createQuery("delete from Books where id=:bookId");
+        Query theQuery = currentSession.createQuery("delete from Book where id=:bookId");
         theQuery.setParameter("bookId", theId);
         theQuery.executeUpdate();
     }
@@ -79,7 +79,7 @@ public class BookDAOImpl implements BookDAO {
         Query theQuery = null;
 
         if (theSearchName != null & theSearchName.trim().length() > 0) {
-            theQuery = currentSession.createQuery("from Books where lower(Title) like :theName " +
+            theQuery = currentSession.createQuery("from Book where lower(Title) like :theName " +
                     "or lower(Author) like :theName", Book.class);
 
             theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
